@@ -26,7 +26,7 @@ export const useFinanceStore = create(
     (set, get) => ({
       transactions: mockTransactions,
       role: 'viewer',
-      theme: typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+      theme: 'light',
       filters: { category: '', type: '', dateFrom: '', dateTo: '' },
       search: '',
       
