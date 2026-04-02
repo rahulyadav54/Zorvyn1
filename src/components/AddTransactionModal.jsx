@@ -5,7 +5,6 @@ import { useFinanceStore } from '../stores/useFinanceStore'
 
 const AddTransactionModal = ({ isOpen, onClose }) => {
   const addTransaction = useFinanceStore((state) => state.addTransaction)
-  const transactions = useFinanceStore((state) => state.transactions)
   
   const categories = ['Food', 'Transport', 'Groceries', 'Entertainment', 'Utilities', 'Rent', 'Shopping', 'Dining Out', 'Salary', 'Freelance', 'Bonus', 'Investment Returns']
   
@@ -63,28 +62,28 @@ const AddTransactionModal = ({ isOpen, onClose }) => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="bg-gray-900 dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full border border-gray-700 dark:border-gray-700"
+            className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full border border-gray-200 dark:border-gray-700"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between p-6 border-b border-gray-700 dark:border-gray-700">
-              <h2 className="text-xl font-bold text-white dark:text-white">Add Transaction</h2>
+            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Add Transaction</h2>
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-gray-800 dark:hover:bg-gray-700 rounded-lg transition-smooth"
+                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-smooth"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-6 space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 dark:text-gray-400 mb-2">Type</label>
+                  <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Type</label>
                   <select
                     name="type"
                     value={formData.type}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 bg-gray-800 dark:bg-gray-700 border border-gray-700 dark:border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="expense">Expense</option>
                     <option value="income">Income</option>
@@ -92,19 +91,19 @@ const AddTransactionModal = ({ isOpen, onClose }) => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 dark:text-gray-400 mb-2">Date</label>
+                  <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Date</label>
                   <input
                     type="date"
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 bg-gray-800 dark:bg-gray-700 border border-gray-700 dark:border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 dark:text-gray-400 mb-2">Amount (₹)</label>
+                <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Amount (₹)</label>
                 <input
                   type="number"
                   name="amount"
@@ -113,17 +112,17 @@ const AddTransactionModal = ({ isOpen, onClose }) => {
                   placeholder="0"
                   step="1"
                   min="0"
-                  className="w-full px-3 py-2 bg-gray-800 dark:bg-gray-700 border border-gray-700 dark:border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 dark:text-gray-400 mb-2">Category</label>
+                <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Category</label>
                 <select
                   name="category"
                   value={formData.category}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 bg-gray-800 dark:bg-gray-700 border border-gray-700 dark:border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   {categories.map(cat => (
                     <option key={cat} value={cat}>{cat}</option>
@@ -132,22 +131,22 @@ const AddTransactionModal = ({ isOpen, onClose }) => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 dark:text-gray-400 mb-2">Description</label>
+                <label className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Description</label>
                 <input
                   type="text"
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
                   placeholder="Add a note..."
-                  className="w-full px-3 py-2 bg-gray-800 dark:bg-gray-700 border border-gray-700 dark:border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
-              <div className="flex gap-3 pt-4">
+              <div className="flex gap-3 pt-2 sm:pt-4">
                 <button
                   type="button"
                   onClick={onClose}
-                  className="flex-1 px-4 py-2 bg-gray-800 dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-smooth font-medium"
+                  className="flex-1 px-4 py-2 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-white rounded-lg transition-smooth font-medium"
                 >
                   Cancel
                 </button>

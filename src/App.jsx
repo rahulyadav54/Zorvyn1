@@ -27,24 +27,15 @@ function App() {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }} >
-        {/* Insights Cards */}
+        transition={{ duration: 0.5 }} 
+        className="space-y-8 sm:space-y-12"
+      >
         <Insights />
-
-        {/* Dashboard Charts */}
-        <div className="mt-12">
-          <DashboardOverview />
-        </div>
-
-        {/* Transactions Section */}
-        <div className="mt-12">
-          <TransactionsTable />
-        </div>
+        <DashboardOverview />
+        <TransactionsTable />
       </motion.div>
     </Layout>
   )
 }
 
 export default App
-
-
