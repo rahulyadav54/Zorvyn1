@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
               </div>
               <div>
                 <h1 className="text-lg sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent">
-                  Zorvyn
+                  ZORVYN FINANCE
                 </h1>
               </div>
             </motion.div>
