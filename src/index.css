@@ -9,6 +9,19 @@
 :root {
   --glass-bg: rgba(15, 23, 42, 0.8);
   --glass-border: rgba(148, 163, 184, 0.25);
+  --bg-gradient-start: #f1f5f9;
+  --bg-gradient-mid: #e2e8f0;
+  --bg-gradient-end: #cbd5e1;
+  --text-primary: #1e293b;
+}
+
+.dark {
+  --glass-bg: rgba(15, 23, 42, 0.8);
+  --glass-border: rgba(148, 163, 184, 0.25);
+  --bg-gradient-start: #1a2a6c;
+  --bg-gradient-mid: #0f172a;
+  --bg-gradient-end: #020617;
+  --text-primary: #e2e8f0;
 }
 
 body {
@@ -18,9 +31,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(circle at top left, #1a2a6c, #0f172a 40%, #020617);
-  color: #e2e8f0;
-  transition: background 0.4s ease;
+  background: radial-gradient(circle at top left, var(--bg-gradient-start), var(--bg-gradient-mid) 40%, var(--bg-gradient-end));
+  color: var(--text-primary);
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 @keyframes gradientShift {
